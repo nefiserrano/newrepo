@@ -4,3 +4,139 @@
 *:after {
   box-sizing: border-box;
 }
+
+html {
+  background-image: url("/images/site/small_check.jpg");
+}
+
+#wrapper {
+  padding: 1rem;
+  background-color: white;
+  width: 70%;
+  margin: 0 auto;
+  border: 0.4rem solid rgba(0, 162, 255, 0.822);
+  border-radius: 10px;
+}
+
+a {
+  text-decoration: none;
+  color: black;
+}
+
+.siteName {
+  font-size: 2.5rem;
+  font-weight: bold;
+  padding: 1rem;
+}
+
+#tools {
+  float: right;
+  font-size: 1.5rem;
+  padding: 0.5rem;
+}
+
+nav ul {
+  display: flex;
+  padding: 0;
+  margin-top: 2.5rem;
+  background-color: rgb(65, 63, 63);
+}
+
+nav ul li {
+  padding: 0.5rem;
+  display: block;
+  flex: 1 1 100%;
+  text-align: center;
+  color: white;
+  font-size: 1.5rem;
+}
+
+h1 {
+  margin-top: 2rem;
+}
+
+#delorean {
+  display: block;
+  margin: 0 auto;
+}
+
+#container { 
+  position: relative;
+  margin-bottom: 3rem;
+}
+
+#own {
+  position: absolute;
+  top: 2rem;
+  left: 8rem;
+  background-color: rgba(255, 255, 255, 0.5);
+}
+
+#own img {
+  width: 10rem;
+  margin-top: 20px;
+  border: 1px solid white;
+}
+
+#own p {
+  color: rgba(0, 162, 255, 0.822);
+  font-weight: bold;
+  font-size: 1.5rem;
+  margin: 0;
+}
+
+#own #dmc {
+  font-size: 1.9rem;
+}
+
+#upgrades-reviews {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+}
+
+#upgrades {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+
+#no-grid {
+  grid-column: 1 / -1;
+}
+
+figure {
+  margin: 0.1rem;
+  text-align: center;
+  width: 200px;
+  height: 130px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+figure img {
+  background-color: rgba(0, 162, 255, 0.822);
+  padding: 1rem 4rem;
+  max-width: 100%;
+  max-height: 100%;
+}
+
+figcaption {
+  color: blue;
+  text-decoration: underline;
+}
+
+#reviews ul {
+  padding: 1rem;
+}
+
+#reviews li {
+  margin-bottom: 1rem;
+  font-size: 1.2em;
+}
+
+footer p {
+  margin-bottom: 0;
+  margin-top: 2.5rem;
+}
