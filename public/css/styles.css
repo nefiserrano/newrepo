@@ -5,17 +5,19 @@
   box-sizing: border-box;
 }
 
+body {
+  margin: 0;
+}
+
 html {
   background-image: url("/images/site/small_check.jpg");
 }
 
 #wrapper {
-  padding: 1rem;
   background-color: white;
-  width: 70%;
+  width: 100%;
   margin: 0 auto;
-  border: 0.4rem solid rgba(0, 162, 255, 0.822);
-  border-radius: 10px;
+  padding: 1rem;
 }
 
 a {
@@ -24,14 +26,14 @@ a {
 }
 
 .siteName {
-  font-size: 2.5rem;
+  font-size: 1.8rem;
   font-weight: bold;
-  padding: 1rem;
+  padding: 0.5rem;
 }
 
 #tools {
   float: right;
-  font-size: 1.5rem;
+  font-size: 1.1rem;
   padding: 0.5rem;
 }
 
@@ -43,16 +45,18 @@ nav ul {
 }
 
 nav ul li {
-  padding: 0.5rem;
+  padding: 1rem 0.5rem;
+  flex: 1 1 100%;
   display: block;
   flex: 1 1 100%;
   text-align: center;
   color: white;
-  font-size: 1.5rem;
+  font-size: 1rem;
 }
 
 h1 {
   margin-top: 2rem;
+  font-size: 1.7rem;
 }
 
 #delorean {
@@ -67,37 +71,38 @@ h1 {
 
 #own {
   position: absolute;
-  top: 2rem;
-  left: 8rem;
-  background-color: rgba(255, 255, 255, 0.5);
+  top: 0.6rem;
+  left: 1vw;
+  background-color: rgba(255, 255, 255, 0.8);
 }
 
 #own img {
-  width: 10rem;
-  margin-top: 20px;
+  width: 8rem;
+  margin-top: 10px;
   border: 1px solid white;
 }
 
 #own p {
-  color: rgba(0, 162, 255, 0.822);
+  color: rgba(0, 102, 255, 0.822);
   font-weight: bold;
-  font-size: 1.5rem;
+  font-size: 1rem;
   margin: 0;
 }
 
 #own #dmc {
-  font-size: 1.9rem;
+  font-size: 1.3rem;
 }
 
 #upgrades-reviews {
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: 1fr;
   gap: 1rem;
 }
 
 #upgrades {
   display: grid;
   grid-template-columns: 1fr 1fr;
+  order: 2;
 }
 
 #no-grid {
@@ -107,8 +112,6 @@ h1 {
 figure {
   margin: 0.1rem;
   text-align: center;
-  width: 200px;
-  height: 130px;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -117,7 +120,8 @@ figure {
 
 figure img {
   background-color: rgba(0, 162, 255, 0.822);
-  padding: 1rem 4rem;
+  border: 0.1rem solid black;
+  padding: 2vw 5vw;
   max-width: 100%;
   max-height: 100%;
 }
@@ -125,6 +129,10 @@ figure img {
 figcaption {
   color: blue;
   text-decoration: underline;
+}
+
+#reviews {
+  order: 1;
 }
 
 #reviews ul {
@@ -139,4 +147,61 @@ figcaption {
 footer p {
   margin-bottom: 0;
   margin-top: 2.5rem;
+}
+
+@media screen and (min-width: 600px) {
+  body {
+    margin: 8px;
+  }
+
+  #wrapper {
+    width: 80%;
+    border: 0.4rem solid rgba(0, 162, 255, 0.822);
+    border-radius: 10px;
+  }
+
+  .siteName {
+    font-size: 2.2rem;
+  }
+
+  #tools {
+    font-size: 1.3rem;
+  }
+
+  nav ul li {
+    font-size: 1.2rem;
+    padding: 0.5rem;
+  }
+
+  h1 {
+    font-size: 2rem;
+  }
+
+  #upgrades-reviews {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  #own {
+    left: 10vw;
+  }
+
+  #own p {
+    font-size: 1.4rem;
+  }
+
+  #own #dmc {
+    font-size: 1.7rem;
+  }
+
+  #own img {
+    width: 10rem;
+  }
+
+  #reviews {
+    order: 2;
+  }
+
+  #upgrades {
+    order: 1;
+  }
 }
