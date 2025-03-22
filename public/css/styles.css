@@ -7,6 +7,7 @@
 
 body {
   margin: 0;
+  font-family: "Open Sans", sans-serif;
 }
 
 html {
@@ -44,14 +45,13 @@ nav ul {
   display: flex;
   padding: 0;
   margin-top: 2.5rem;
-  background-color: rgb(65, 63, 63);
+  background-color: rgba(1, 51, 143, 0.959);
 }
 
 nav ul li {
-  padding: 1rem 0.5rem;
+  padding: 1rem 0.3rem;
   flex: 1 1 100%;
   display: block;
-  flex: 1 1 100%;
   text-align: center;
   color: white;
   font-size: 1rem;
@@ -122,7 +122,7 @@ figure {
 }
 
 figure img {
-  background-color: rgba(0, 162, 255, 0.822);
+  background-color: rgba(3, 108, 168, 0.822);
   border: 0.1rem solid black;
   padding: 2vw 5vw;
   max-width: 100%;
