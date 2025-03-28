@@ -33,9 +33,3 @@ WHERE classification_name = 'Sport';
 UPDATE public.inventory
 SET inv_image = REPLACE(inv_image, '/images/', '/images/vehicles/'),
     inv_thumbnail = REPLACE(inv_thumbnail, '/images/', '/images/vehicles/');
-
-SELECT * FROM public.account;
-
-SELECT * FROM public.inventory;
-
-SELECT * FROM public.classification;
