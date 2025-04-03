@@ -194,6 +194,12 @@ ul {
   display: block;
 }
 
+/******* Error View ***************/
+
+#error {
+  text-align: center;
+}
+
 @media screen and (min-width: 600px) {
   header img {
     width: 73px;
