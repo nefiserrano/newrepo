@@ -19,4 +19,35 @@ invCont.buildByClassificationId = async function (req, res, next) {
   })
 }
 
+/* ***************************
+ *  Build inventory items details by classification view
+ * ************************** */
+invCont.getItemDetails = async function (req, res) {
+  const inventory_id = req.params.inventoryId
+  const vehicleData = await invModel.getVehicleById(inventory_id)
+  const vehicleInfo = await utilities.buildVehicleDataHTML(vehicleData)
+  let nav = await utilities.getNav()
+  const vehicleTitle = vehicleData[0].inv_year + " " + vehicleData[0].inv_make + " " + vehicleData[0].inv_model + " "
+  res.render("./inventory/detail", {
+    title: vehicleTitle,
+    nav,
+    vehicleInfo,
+  })
+}
+
+/* ***************************
+ *  Trigger 500 Error intentionally
+ * ************************** */
+invCont.triggerError = async function (req, res) {
+  const inventory_id = req.params.inventoryId
+  const vehicleData = await invModel.getVehicleById(inventory_id)
+  const vehicleInfo = await utilities.buildVehicleDataHTML(vehicleData)
+  const vehicleTitle = vehicleData[0].inv_year + " " + vehicleData[0].inv_make + " " + vehicleData[0].inv_model + " "
+  res.render("./inventory/detail", {
+    title: vehicleTitle,
+    nav,
+    vehicleInfo,
+  })
+}
+
 module.exports = invCont

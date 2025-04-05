@@ -132,7 +132,7 @@ figure img {
   max-height: 100%;
 }
 
-figcaption {
+figcaption, footer a {
   color: blue;
   text-decoration: underline;
 }
@@ -192,6 +192,31 @@ ul {
 #inv-display span {
   padding-bottom: 1rem;
   display: block;
+}
+
+/******* Vehicle Details View ***************/
+
+#vehicle-details {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1rem;
+}
+
+#vehicle-details img {
+  display: block;
+  margin: 0 auto;
+  max-width: 100%;
+  height: auto;
+  margin-top: 1.5rem;
+}
+
+#price {
+  font-size: 1.4rem;
+  font-weight: bold;
+}
+
+.details {
+  font-size: 1.1rem;
 }
 
 /******* Error View ***************/
@@ -258,5 +283,9 @@ ul {
 
   #upgrades {
     order: 1;
+  }
+
+  #vehicle-details {
+    grid-template-columns: 1fr 1fr;
   }
 }
