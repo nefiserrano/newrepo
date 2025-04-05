@@ -7,7 +7,7 @@ const utilities = require("../utilities")
 // Route to build inventory by classification view
 router.get("/type/:classificationId", utilities.handleErrors(invController.buildByClassificationId))
 
-// Route to build inventory items details by classification view
+// Route to build inventory items details by id view
 router.get("/detail/:inventoryId", utilities.handleErrors(invController.getItemDetails))
 
 // Route to 500 Error

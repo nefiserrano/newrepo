@@ -26,7 +26,7 @@ async function getInventoryByClassificationId(classification_id) {
 }
 
 /* ***************************
- *  Get specific vehicle's information bases on its inventory ID
+ *  Get specific vehicle's information based on its inventory ID
  * ************************** */
 async function getVehicleById(inventory_id) {
   try {
