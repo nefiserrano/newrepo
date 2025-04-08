@@ -6,12 +6,20 @@
 
 <%- messages() %>
 
-<form>
+<% if (errors) { %>
+    <ul class="notice">
+   <% errors.array().forEach(error => { %>
+     <li><%= error.msg %></li>
+  <%  }) %>
+   </ul>
+  <% } %>
+
+<form action="/account/login" method="post">
     <fieldset>
         <legend>Account</legend>
         <div class="inputs">
             <label for="email">Email:*</label><br>
-            <input type="email" id="email" name="account_email" placeholder="someone@gmail.com" required><br>
+            <input type="email" id="email" name="account_email" placeholder="someone@gmail.com" required value="<%= locals.account_email %>"><br>
         </div>
         <div class="inputs">
             <label for="password">Password:*</label><br>
