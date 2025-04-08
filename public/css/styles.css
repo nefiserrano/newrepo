@@ -219,6 +219,89 @@ ul {
   font-size: 1.1rem;
 }
 
+/******* Login and Registration View ***************/
+
+form {
+  margin: 0 auto;
+  max-width: 350px;
+}
+
+form fieldset {
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  background-color: rgba(191, 215, 223, 0.575);
+  box-shadow: 0 4px 6px black;
+}
+
+form legend {
+  font-weight: bold;
+  font-size: 1.5rem;
+}
+
+form label {
+  font-weight: bold;
+}
+
+.inputs {
+  margin: 1.5rem 1rem;
+}
+
+form input[type="email"],
+form input[type="password"],
+form input[type="text"] {
+  width: 100%;
+  padding: 0.8rem;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+}
+
+form input[type="submit"] {
+  width: 30%;
+  border: none;
+  background-color: #007bff;
+  color: white;
+  border-radius: 4px;
+  padding: 0.6rem;
+  font-weight: bold;
+  cursor: pointer;
+  text-align: center;
+  display: block;
+  margin: 0 auto;
+}
+
+form input[type="submit"]:hover {
+  background-color: #0056b3;
+}
+
+form p {
+  text-align: center;
+}
+
+form p a {
+  text-decoration: underline;
+  color: black;
+}
+
+form span {
+  display: block;
+  border: 2px solid #ccc;
+  background-color: white;
+  border-radius: 5px;
+  margin-top: 1em;
+  width: 8em;
+  text-align: center;
+  cursor: pointer;
+}
+
+input:required:invalid, input:focus:invalid {
+  border: 2px solid red;
+ }
+
+ input:required:valid {
+  border: 2px solid green;
+ }
+
 /******* Error View ***************/
 
 #error {

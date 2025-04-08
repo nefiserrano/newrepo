@@ -1,0 +1,25 @@
+<% if (title) { %>
+    <h1><%= title %></h1>
+    <% } else {
+      res.redirect('/')
+    } %>
+
+<%- messages() %>
+
+<form>
+    <fieldset>
+        <legend>Account</legend>
+        <div class="inputs">
+            <label for="email">Email:*</label><br>
+            <input type="email" id="email" name="account_email" placeholder="someone@gmail.com" required><br>
+        </div>
+        <div class="inputs">
+            <label for="password">Password:*</label><br>
+            <p>Passwords must be at least 12 characters and contain at least 1 number, 1 capital letter and 1 special character</p>
+            <input type="password" id="password" name="account_password" required pattern="^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[^a-zA-Z0-9])(?!.*\s).{12,}$"><br>
+            <span class="pswBtn" data-target="password">Show Password</span>
+        </div>
+        <input type="submit" value="LOGIN">
+        <p>No account? <a href="/account/registration">Sign-up</a></p>
+    </fieldset>
+</form>
