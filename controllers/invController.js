@@ -38,6 +38,55 @@ invCont.getItemDetails = async function (req, res) {
 }
 
 /* ***************************
+ *  Build vehicle management view
+ * ************************** */
+invCont.buildManagement = async function (req, res) {
+  let nav = await utilities.getNav()
+  res.render("./inventory/management", {
+    title: "Vehicle Inventory Management",
+    nav,
+    errors: null,
+  })
+}
+
+/* ***************************
+ *  Build add new classification view
+ * ************************** */
+invCont.buildAddClassification = async function (req, res) {
+  let nav = await utilities.getNav()
+  res.render("./inventory/add-classification", {
+    title: "Add New Classification",
+    nav,
+    errors: null,
+  })
+}
+
+/* ****************************************
+*  Process add new classification
+* *************************************** */
+invCont.registerClassification = async function (req, res) {
+  let nav = await utilities.getNav()
+  const { classification_name } = req.body
+
+  const classificationResult = await invModel.registerClassification(classification_name)
+
+  if (classificationResult) {
+    req.flash(
+      "notice",
+      `Congratulations, you\'ve registered the new ${classification_name} classification.`
+    )
+    res.redirect("/inv/management")
+  } else {
+    req.flash("notice", "Sorry, the registration of the new classification failed.")
+    res.status(501).render("inventory/add-classification", {
+      title: "Add New Classification",
+      nav,
+      errors: null,   
+    })
+  }
+}
+
+/* ***************************
  *  Trigger 500 Error intentionally
  * ************************** */
 invCont.triggerError = async function (req, res) {

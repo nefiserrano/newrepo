@@ -20,6 +20,7 @@ header img {
 
 header a {
   color: black;
+  text-decoration: none;
 }
 
 #wrapper {
@@ -29,7 +30,7 @@ header a {
   padding: 1rem;
 }
 
-a {
+nav a {
   text-decoration: none;
   color: white;
 }
@@ -47,6 +48,8 @@ a {
 
 nav ul {
   display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
   padding: 0;
   margin-top: 2.5rem;
   background-color: rgba(1, 51, 143, 0.959);
@@ -54,7 +57,7 @@ nav ul {
 
 nav ul li {
   padding: 1rem 0.3rem;
-  flex: 1 1 100%;
+  flex: 1 1 15%;
   display: block;
   text-align: center;
   font-size: 0.9rem;
@@ -132,7 +135,7 @@ figure img {
   max-height: 100%;
 }
 
-figcaption, footer a {
+figcaption {
   color: blue;
   text-decoration: underline;
 }
@@ -168,12 +171,6 @@ ul {
   padding: 0;
   align-items: center;
   text-align: center;
-}
-
-#inv-display h2 a {
-  color: blue;
-  text-decoration: underline;
-  font-size: 0.9em;
 }
 
 #inv-display li {
@@ -251,9 +248,10 @@ form input[type="password"],
 form input[type="text"] {
   width: 100%;
   padding: 0.8rem;
-  border: 1px solid #ccc;
+  border: 2px solid #ccc;
   border-radius: 4px;
   box-sizing: border-box;
+  outline: none;
 }
 
 form input[type="submit"] {
@@ -279,7 +277,6 @@ form p {
 }
 
 form p a {
-  text-decoration: underline;
   color: black;
 }
 
@@ -294,13 +291,22 @@ form span {
   cursor: pointer;
 }
 
-input:required:invalid, input:focus:invalid {
+input:focus:required:invalid {
   border: 2px solid red;
  }
 
  input:required:valid {
   border: 2px solid green;
  }
+
+/******* Vehicle Management View ***************/
+
+.management {
+  display: block;
+  padding: 0.6rem;
+  text-align: center;
+  font-size: 1.4em;
+}
 
 /******* Error View ***************/
 
