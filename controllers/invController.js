@@ -42,7 +42,7 @@ invCont.getItemDetails = async function (req, res) {
  * ************************** */
 invCont.buildManagement = async function (req, res) {
   let nav = await utilities.getNav()
-  res.render("./inventory/management", {
+  res.render("./inventory/", {
     title: "Vehicle Inventory Management",
     nav,
     errors: null,
@@ -89,7 +89,7 @@ invCont.registerClassification = async function (req, res) {
       "notice",
       `Congratulations, you\'ve registered the new ${classification_name} classification.`
     )
-    res.redirect("/inv/management")
+    res.redirect("/inv/")
   } else {
     req.flash("notice", "Sorry, the registration of the new classification failed.")
     res.status(501).render("inventory/add-classification", {
@@ -126,7 +126,7 @@ invCont.registerInventory = async function (req, res) {
       "notice",
       `Congratulations, you\'ve registered the new ${inv_make} ${inv_model} vehicle.`
     )
-    res.status(201).render("inventory/management", {
+    res.status(201).render("inventory/", {
       title: "Vehicle Inventory Management",
       nav,
       errors: null,
