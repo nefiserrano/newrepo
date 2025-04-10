@@ -1,0 +1,62 @@
+<% if (title) { %>
+    <h1><%= title %></h1>
+    <% } else {
+      res.redirect('/')
+    } %>
+
+<%- messages() %>
+
+<% if (errors) { %>
+    <ul class="notice">
+   <% errors.array().forEach(error => { %>
+     <li><%= error.msg %></li>
+  <%  }) %>
+   </ul>
+  <% } %>
+
+  <form action="/inv/add-inventory" method="post">
+    <fieldset>
+        <legend>Add Vehicle</legend>
+        <p>All fields are required*</p>
+        <div class="inputs">
+            <%- list %>
+        </div>
+        <div class="inputs">
+            <label for="make">Make:*</label><br>
+            <input type="text" id="make" name="inv_make" required value="<%= locals.inv_make %>"><br>
+        </div>
+        <div class="inputs">
+            <label for="model">Model:*</label><br>
+            <input type="text" id="model" name="inv_model" required value="<%= locals.inv_model %>"><br>
+        </div>
+        <div class="inputs">
+            <label for="desc">Description:*</label><br>
+            <textarea name="inv_description" id="desc" required><%= locals.inv_description %></textarea>
+        </div>
+        <div class="inputs">
+            <label for="imgpath">Image Path:*</label><br>
+            <input type="text" id="imgpath" name="inv_image" value="/images/vehicles/no-image.png" required readonly><br>
+        </div>
+        <div class="inputs">
+            <label for="thumbpath">Thumbnail Path:*</label><br>
+            <input type="text" id="thumbpath" name="inv_thumbnail" value="/images/vehicles/no-image-tn.png" required readonly><br>
+        </div>
+        <div class="inputs">
+            <label for="formprice">Price:*</label><br>
+            <input type="number" id="formprice" name="inv_price" min="0" max="999999999" step="1" placeholder="Positive Integer" required value="<%= locals.inv_price %>"><br>
+        </div>
+        <div class="inputs">
+            <label for="year">Year:*</label><br>
+            <input type="number" id="year" name="inv_year" min="1000" max="9999" step="1" placeholder="4-digit Number" required value="<%= locals.inv_year %>"><br>
+        </div>
+        <div class="inputs">
+            <label for="miles">Miles:*</label><br>
+            <input type="number" id="miles" name="inv_miles" min="0" step="1" placeholder="Positive Integer" required value="<%= locals.inv_miles %>"><br>
+        </div>
+        <div class="inputs">
+            <label for="color">Color:*</label><br>
+            <input type="text" id="color" name="inv_color" required value="<%= locals.inv_color %>"><br>
+        </div>
+        <input type="submit" value="ADD VEHICLE">
+    </fieldset>
+</form>

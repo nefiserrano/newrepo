@@ -57,7 +57,7 @@ nav ul {
 
 nav ul li {
   padding: 1rem 0.3rem;
-  flex: 1 1 15%;
+  flex: 1 1 14%;
   display: block;
   text-align: center;
   font-size: 0.9rem;
@@ -245,7 +245,11 @@ form label {
 
 form input[type="email"],
 form input[type="password"],
+form textarea,
+form input[type="number"],
+form select,
 form input[type="text"] {
+  font-family: "Open Sans", sans-serif;
   width: 100%;
   padding: 0.8rem;
   border: 2px solid #ccc;
@@ -255,7 +259,7 @@ form input[type="text"] {
 }
 
 form input[type="submit"] {
-  width: 30%;
+  width: 40%;
   border: none;
   background-color: #007bff;
   color: white;
@@ -291,11 +295,11 @@ form span {
   cursor: pointer;
 }
 
-input:focus:required:invalid {
+input:focus:required:invalid, textarea:focus:required:invalid, select:focus:required:invalid {
   border: 2px solid red;
  }
 
- input:required:valid {
+ input:required:valid, textarea:required:valid, select:required:valid {
   border: 2px solid green;
  }
 
