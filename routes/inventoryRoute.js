@@ -21,6 +21,11 @@ router.get("/add-classification", utilities.handleErrors(invController.buildAddC
 // Route to build add new classification view
 router.get("/add-inventory", utilities.handleErrors(invController.buildAddInventory))
 
+router.get("/getInventory/:classification_id", utilities.handleErrors(invController.getInventoryJSON))
+
+// Route to build edit Item's information view
+router.get("/edit/:inventory_id", utilities.handleErrors(invController.editItemInfo))
+
 // Route to process add new classification form submission
 router.post(
     "/add-classification",
@@ -29,13 +34,20 @@ router.post(
     utilities.handleErrors(invController.registerClassification)
   )
 
-  // Route to process add new inventory form submission
+// Route to process add new inventory form submission
 router.post(
   "/add-inventory",
   manValidate.addInventoryRules(),
   manValidate.checkInventoryData,
   utilities.handleErrors(invController.registerInventory)
 )
+
+// Route to process update inventory form submission
+router.post(
+  "/update/",
+  manValidate.addInventoryRules(),
+  manValidate.checkUpdateData,
+  utilities.handleErrors(invController.updateInventory))
 
 // Route to 500 Error
 router.get("/trigger-error", utilities.handleErrors(invController.triggerError))

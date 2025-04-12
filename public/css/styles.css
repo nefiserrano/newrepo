@@ -313,6 +313,60 @@ input:focus:required:invalid, textarea:focus:required:invalid, select:focus:requ
   font-size: 1.4em;
 }
 
+#inventoryDisplayContainer {
+  text-align: center;
+ }
+
+#inventoryDisplayContainer select {
+  font-family: "Open Sans", sans-serif;
+  width: 100%;
+  max-width: 350px;
+  padding: 0.8rem;
+  border: 2px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+  margin-bottom: 2rem;
+ }
+
+table {
+  border-collapse: collapse;
+  text-align: left;
+  margin: auto;
+  padding: 2rem;
+}
+
+table thead th {
+  background-color: #007bff;
+  color: white;
+  padding: 0.6rem;
+  border: 1px solid #ddd;
+  text-transform: uppercase;
+}
+
+table tbody td {
+  padding: 0.6rem;
+  border: 1px solid #ddd;
+}
+
+table tbody tr:nth-child(odd) {
+  background-color: #f9f9f9;
+}
+
+table tbody tr:nth-child(even) {
+  background-color: #ffffff;
+}
+
+table tbody td a {
+  color: #007bff;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+table tbody td a:hover {
+  text-decoration: underline;
+  color: #0056b3;
+}
+
 /******* Error View ***************/
 
 #error {
