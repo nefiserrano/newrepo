@@ -39,9 +39,9 @@ Util.buildClassificationGrid = async function(data){
       + '" title="View ' + vehicle.inv_make + ' '+ vehicle.inv_model 
       + 'details"><img src="' + vehicle.inv_thumbnail 
       +'" alt="Image of '+ vehicle.inv_make + ' ' + vehicle.inv_model 
-      +' on CSE Motors" /></a>'
+      +' on CSE Motors"></a>'
       grid += '<div class="namePrice">'
-      grid += '<hr />'
+      grid += '<hr>'
       grid += '<h2>'
       grid += '<a href="../../inv/detail/' + vehicle.inv_id +'" title="View ' 
       + vehicle.inv_make + ' ' + vehicle.inv_model + ' details">' 
@@ -127,9 +127,24 @@ Util.checkJWTToken = (req, res, next) => {
      next()
     })
   } else {
+    res.locals.loggedin = 0
    next()
   }
  }
+
+ /* ****************************************
+* Middleware to check account type
+**************************************** */
+Util.checkAcccountType = (req, res, next) => {
+  if (res.locals.loggedin && res.locals.accountData) {
+    const accountType = res.locals.accountData.account_type;
+    if (accountType === "Employee" || accountType === "Admin") {
+      return next()
+    }
+  }
+  req.flash("notice", "You do not have permission to access this resource.")
+  return res.redirect("/account/login")
+}
 
 /* ****************************************
  *  Check Login
@@ -141,6 +156,6 @@ Util.checkLogin = (req, res, next) => {
     req.flash("notice", "Please log in.")
     return res.redirect("/account/login")
   }
- }
+}
 
 module.exports = Util

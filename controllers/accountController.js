@@ -41,6 +41,21 @@ async function buildAccountManagement(req, res, next) {
 }
 
 /* ****************************************
+*  Deliver edit account view
+* *************************************** */
+async function buildUpdateAccount(req, res, next) {
+  let nav = await utilities.getNav()
+  const accountId = req.params.account_id
+  //const accountData = await accountModel.getAccountById(accountId)
+  res.render("account/update", {
+    title: "Edit Account",
+    nav,
+  //  accountData,
+    errors: null,
+  })
+}
+
+/* ****************************************
 *  Process Registration
 * *************************************** */
 async function registerAccount(req, res) {
@@ -128,4 +143,4 @@ async function accountLogin(req, res) {
   }
 }
 
-  module.exports = { buildLogin, buildRegister, registerAccount, accountLogin, buildAccountManagement };
+  module.exports = { buildLogin, buildRegister, registerAccount, accountLogin, buildAccountManagement, buildUpdateAccount };
