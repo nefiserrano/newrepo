@@ -65,7 +65,7 @@ Util.buildClassificationGrid = async function(data){
 Util.buildVehicleDataHTML = async function(vehicleData){
   const HTML = `
   <form action="/favorites/add" method="post">
-    <input type="hidden" name="inv_id" value="${vehicleData[0].inv_id}" required pattern="\\d+">
+    <input type="hidden" name="inv_id" value="${vehicleData[0].inv_id}">
     <button id="add-favorite-button" type="submit">Add to Favorites</button>
   </form>
   <div id="vehicle-details">
