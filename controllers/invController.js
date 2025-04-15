@@ -128,9 +128,11 @@ invCont.registerInventory = async function (req, res) {
       "notice",
       `Congratulations, you\'ve registered the new ${inv_make} ${inv_model} vehicle.`
     )
+    const classificationSelect = await utilities.buildClassificationList()
     res.status(201).render("inventory/", {
       title: "Vehicle Inventory Management",
       nav,
+      classificationSelect,
       errors: null,
     })
   } else {
