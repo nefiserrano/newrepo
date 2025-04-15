@@ -14,6 +14,7 @@ const baseController = require("./controllers/baseController")
 const inventoryRoute = require("./routes/inventoryRoute")
 const accountRoute = require("./routes/accountRoute")
 const utilities = require("./utilities")
+const favoritesRoute = require("./routes/favoritesRoute")
 const session = require("express-session")
 const pool = require('./database/')
 const bodyParser = require("body-parser")
@@ -69,6 +70,9 @@ app.use("/inv", utilities.handleErrors(inventoryRoute))
 
 // Account route
 app.use("/account", utilities.handleErrors(accountRoute))
+
+// Favorites route
+app.use("/favorites", utilities.handleErrors(favoritesRoute))
 
 // File Not Found Route - must be last route in list
 app.use(async (req, res, next) => {
