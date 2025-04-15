@@ -34,4 +34,23 @@ router.post(
   utilities.handleErrors(accountController.accountLogin)
 )
 
+// Process the update account
+router.post(
+  "/update",
+  regValidate.accountRules(),
+  regValidate.checkAccountData,
+  utilities.handleErrors(accountController.updateAccount)
+)
+
+// Process the update password
+router.post(
+  "/update-password",
+  regValidate.password(),
+  regValidate.checkPasswordData,
+  utilities.handleErrors(accountController.updatePassword)
+)
+
+// Process the logout attempt
+router.get("/logout", utilities.checkLogin, utilities.handleErrors(accountController.logout))
+
 module.exports = router;

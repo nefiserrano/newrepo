@@ -233,6 +233,7 @@ form fieldset {
 form legend {
   font-weight: bold;
   font-size: 1.5rem;
+  padding: 1.5rem;
 }
 
 form label {
@@ -365,6 +366,11 @@ table tbody td a {
 table tbody td a:hover {
   text-decoration: underline;
   color: #0056b3;
+}
+
+/******* Account Management View ***************/
+#account-management {
+  text-align: center;
 }
 
 /******* Error View ***************/

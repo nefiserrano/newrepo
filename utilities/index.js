@@ -116,13 +116,20 @@ Util.checkJWTToken = (req, res, next) => {
    jwt.verify(
     req.cookies.jwt,
     process.env.ACCESS_TOKEN_SECRET,
-    function (err, accountData) {
+    function (err, decoded) {
      if (err) {
       req.flash("Please log in")
       res.clearCookie("jwt")
       return res.redirect("/account/login")
      }
-     res.locals.accountData = accountData
+     req.session.accountData = {
+       account_id: decoded.account_id,
+       account_firstname: decoded.account_firstname,
+       account_lastname: decoded.account_lastname,
+       account_email: decoded.account_email,
+       account_type: decoded.account_type,
+     };
+     res.locals.accountData = req.session.accountData
      res.locals.loggedin = 1
      next()
     })
